@@ -30,8 +30,11 @@
     },
     methods: {
       _isBirthday() {
-        let today = new Date()
+        let today = this._getTodayDate()
         return today.getMonth() === this.profile.birthday.month - 1 && today.getDate() === this.profile.birthday.day
+      },
+      _getTodayDate() {
+        return new Date()
       },
       goToProfile(){
         this.$router.push('/profile')
